@@ -16,5 +16,7 @@ def rotate_and_remove(queue: deque[int], k: int) -> int:
     """
     큐에서 k번째 원소를 제거하고 반환합니다.
     """
-    # 구현하세요!
-    pass
+    queue.rotate(1-k)
+    r = queue.popleft()
+
+    return r
