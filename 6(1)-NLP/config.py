@@ -6,7 +6,7 @@ d_model = 256
 
 # Word2Vec
 window_size = 7
-method: Literal["cbow", "skipgram"] = "skipgram"
+method: Literal["cbow", "skipgram"] = "cbow"
 lr_word2vec = 1e-03
 num_epochs_word2vec = 5
 
