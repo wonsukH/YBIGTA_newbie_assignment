@@ -106,14 +106,14 @@ class Word2Vec(nn.Module):
             return
         
         # 배치로 한 번에 처리
-        batch_inputs = torch.stack(batch_inputs)
-        batch_targets = torch.tensor(batch_targets, dtype=torch.long)
+        batch_inputs_tensor = torch.stack(batch_inputs)
+        batch_targets_tensor = torch.tensor(batch_targets, dtype=torch.long)
         
         # 예측
-        logits = self.weight(batch_inputs)
+        logits = self.weight(batch_inputs_tensor)
         
         # 손실 계산 및 역전파
-        loss = criterion(logits, batch_targets)
+        loss = criterion(logits, batch_targets_tensor)
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
@@ -147,17 +147,17 @@ class Word2Vec(nn.Module):
             return
         
         # 배치로 한 번에 처리
-        batch_inputs = torch.tensor(batch_inputs, dtype=torch.long)
-        batch_targets = torch.tensor(batch_targets, dtype=torch.long)
+        batch_inputs_tensor = torch.tensor(batch_inputs, dtype=torch.long)
+        batch_targets_tensor = torch.tensor(batch_targets, dtype=torch.long)
         
         # 중심 단어의 임베딩
-        center_embeddings = self.embeddings(batch_inputs)
+        center_embeddings = self.embeddings(batch_inputs_tensor)
         
         # 예측
         logits = self.weight(center_embeddings)
         
         # 손실 계산 및 역전파
-        loss = criterion(logits, batch_targets)
+        loss = criterion(logits, batch_targets_tensor)
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
