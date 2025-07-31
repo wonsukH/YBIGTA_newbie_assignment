@@ -1,12 +1,12 @@
-import torch
+import torch # type: ignore
 from torch import nn, optim, Tensor, LongTensor, FloatTensor
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader  # type: ignore
 
-from transformers import AutoTokenizer
-from datasets import load_dataset
+from transformers import AutoTokenizer # type: ignore
+from datasets import load_dataset # type: ignore
 
-from tqdm import tqdm
-from sklearn.metrics import f1_score
+from tqdm import tqdm # type: ignore
+from sklearn.metrics import f1_score # type: ignore
 
 from word2vec import Word2Vec
 from model import MyGRULanguageModel

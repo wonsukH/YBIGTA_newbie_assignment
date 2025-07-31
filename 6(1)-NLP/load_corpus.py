@@ -1,4 +1,4 @@
-from datasets import load_dataset
+from datasets import load_dataset # type: ignore
 
 def load_corpus() -> list[str]:
     corpus: list[str] = []

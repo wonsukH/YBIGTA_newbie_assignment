@@ -1,8 +1,8 @@
-import torch
+import torch # type: ignore
 from torch import nn, Tensor, LongTensor
-from torch.optim import Adam
+from torch.optim import Adam # type: ignore
 
-from transformers import PreTrainedTokenizer
+from transformers import PreTrainedTokenizer # type: ignore
 
 from typing import Literal
 
